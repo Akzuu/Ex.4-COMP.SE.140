@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  s1:
+    build: ./S1
+    ports:
+      - "8001:3001"
+    environment:
+      - PORT=3001
+      - S2_ADDRESS=http://S2:3002
+  s2:
+    build: ./S2
+    environment:
+      - PORT=3002
+    
